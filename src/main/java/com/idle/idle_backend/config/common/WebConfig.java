@@ -1,4 +1,4 @@
-package com.idle.idle_backend.config;
+package com.idle.idle_backend.config.common;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -13,5 +13,4 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .maxAge(3600);
     }
-
 }
