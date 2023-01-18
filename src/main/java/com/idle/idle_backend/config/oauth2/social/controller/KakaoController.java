@@ -1,5 +1,8 @@
 package com.idle.idle_backend.config.oauth2.social.controller;
 
+import com.idle.idle_backend.config.oauth2.social.dto.GetKakaoTokenRequest;
+import com.idle.idle_backend.config.oauth2.social.dto.GetLoginTokenResponse;
+import com.idle.idle_backend.config.oauth2.social.service.KakaoService;
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
 import io.jsonwebtoken.Claims;
@@ -24,15 +27,15 @@ public class KakaoController {
     /**
      * 카카오 서버에서 유저정보 조희
      *
-     * @param getkakaoToken
+     * @param getKakaoToken
      * @return 엑세스 토큰
      * @throws IOException
      * @throws ParseException
      */
     @PostMapping("/kakao")
-    public ResponseEntity<GetLoginTokenResponse> getKaKaoToken(@Valid @RequestBody GetkakaoTokenRequest getkakaoToken) throws IOException, ParseException {
-        String code = getkakaoToken.getCode();
-        String redirectUrl = getkakaoToken.getRedirectUrl();
+    public ResponseEntity<GetLoginTokenResponse> getKaKaoToken(@Valid @RequestBody GetKakaoTokenRequest getKakaoToken) throws IOException, ParseException {
+        String code = getKakaoToken.getCode();
+        String redirectUrl = getKakaoToken.getRedirectUrl();
         GetLoginTokenResponse getLoginToken = kakaoService.KakaoLogin(code, redirectUrl);
         return new ResponseEntity(getLoginToken, HttpStatus.OK);
     }
