@@ -1,5 +1,7 @@
 package com.idle.idle_backend.config.oauth2.social.controller;
 
+import com.idle.idle_backend.user.domain.User;
+import com.idle.idle_backend.user.domain.UserRepository;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.parser.ParseException;

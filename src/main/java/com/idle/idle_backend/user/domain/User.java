@@ -1,10 +1,14 @@
 package com.idle.idle_backend.user.domain;
 
 import com.idle.idle_backend.user.enums.Providers;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -16,6 +20,8 @@ public class User {
 
     @Column(name = "USER_Name")
     private String name;
+
+    private String nickname;
 
     private String email;
 
