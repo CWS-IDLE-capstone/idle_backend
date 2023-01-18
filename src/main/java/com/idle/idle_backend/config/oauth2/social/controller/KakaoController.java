@@ -2,6 +2,7 @@ package com.idle.idle_backend.config.oauth2.social.controller;
 
 import com.idle.idle_backend.config.oauth2.social.dto.GetKakaoTokenRequest;
 import com.idle.idle_backend.config.oauth2.social.dto.GetLoginTokenResponse;
+import com.idle.idle_backend.config.oauth2.social.dto.GetUserInfoResponse;
 import com.idle.idle_backend.config.oauth2.social.service.KakaoService;
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
@@ -56,9 +57,6 @@ public class KakaoController {
                 .imageUrl(user.getImageUrl())
                 .provider(user.getProvider())
                 .userId(user.getId())
-                .age(user.getAge())
-                .gender(user.getGender())
-                .mbti(user.getMbti())
                 .message("유저 정보 요청에 성공했습니다.")
                 .build();
 
