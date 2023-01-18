@@ -1,5 +1,6 @@
 package com.idle.idle_backend.config.oauth2.social.controller;
 
+
 import lombok.RequiredArgsConstructor;
 import org.json.simple.parser.ParseException;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class NaverController {
 
 
     @PostMapping("/naver")
-    public ResponseEntity<GetLoginTokenResponse> getNaverToken(@Valid @RequestBody GetnaverToken getnaverToken) throws IOException, ParseException {
+    public ResponseEntity<GetLoginTokenResponse> getNaverToken(@Valid @RequestBody GetNaverToken getnaverToken) throws IOException, ParseException {
         String code = getnaverToken.getCode();
         String state = getnaverToken.getState();
         GetLoginTokenResponse getLoginTokenResponse = naverService.NaverLogin(code, state);
