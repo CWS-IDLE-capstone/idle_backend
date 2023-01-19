@@ -107,12 +107,10 @@ public class NaverService {
 
 
                 String id = response.get("id").toString();
-                String nickname = response.get("nickname").toString();
-                String profile_image = response.get("profile_image").toString();
+
 
                 result.put("id",id);
-                result.put("nickname", nickname);
-                result.put("profile_image", profile_image);
+
             }
 
         } catch (IOException | ParseException e) {
