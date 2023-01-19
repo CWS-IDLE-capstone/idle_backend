@@ -14,6 +14,10 @@ configurations {
 	}
 }
 
+springBoot {
+	mainClass = 'com.idle.idle_backend.IdleBackendApplication'
+}
+
 repositories {
 	mavenCentral()
 }
@@ -35,9 +39,19 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+//	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 	implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+}
+
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
 }
 
 tasks.named('test') {

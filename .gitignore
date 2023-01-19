@@ -4,8 +4,6 @@ HELP.md
 
 build/
 
-!gradle/wrapper/gradle-wrapper.jar
-
 !build/libs
 
 src/main/resources/application.properties
@@ -15,9 +13,9 @@ src/main/resources/templates/login.html
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-src/main/java/com/example/manymanyUsers/test
+src/main/java/com/example/idle_backend/test
 
-src/main/java/com/example/manymanyUsers/MainClass.java
+src/main/java/com/example/idle_backend/MainClass.java
 
 
 ### STS ###
