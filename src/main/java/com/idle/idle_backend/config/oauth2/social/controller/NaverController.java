@@ -21,6 +21,10 @@ public class NaverController {
 
     private final NaverService naverService;
 
+    @GetMapping("/")
+    public String home() {
+        return "<h1>idle-backend</h1>";
+    }
 
     @PostMapping("/naver")
     public ResponseEntity<GetLoginTokenResponse> getNaverToken(@Valid @RequestBody GetNaverToken getnaverToken) throws IOException, ParseException {
