@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RequestMapping("/api/user")
+@RequestMapping("/api")
 @RestController
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/signup")
+    @PostMapping("/user")
     public ResponseEntity<CommonResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequestDto) {
         try {
             userService.registerUser(signUpRequestDto);
