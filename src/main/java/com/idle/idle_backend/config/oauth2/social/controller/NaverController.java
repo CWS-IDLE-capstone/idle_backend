@@ -21,7 +21,6 @@ public class NaverController {
 
     private final NaverService naverService;
 
-
     @PostMapping("/naver")
     public ResponseEntity<GetLoginTokenResponse> getNaverToken(@Valid @RequestBody GetNaverToken getnaverToken) throws IOException, ParseException {
         String code = getnaverToken.getCode();

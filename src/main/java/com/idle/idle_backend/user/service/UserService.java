@@ -5,14 +5,15 @@ import com.idle.idle_backend.user.domain.UserRepository;
 import com.idle.idle_backend.user.dto.AddInfoRequest;
 import com.idle.idle_backend.user.dto.SignUpRequest;
 import javassist.NotFoundException;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@RequiredArgsConstructor(access = AccessLevel.PUBLIC)
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class UserService {
 

@@ -108,6 +108,7 @@ public class NaverService {
 
                 String id = response.get("id").toString();
 
+
                 result.put("id",id);
 
             }

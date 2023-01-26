@@ -100,18 +100,11 @@ public class KakaoService {
                 JSONParser parser = new JSONParser();
                 JSONObject obj = (JSONObject) parser.parse(res.toString());
 
-
-                System.out.println(obj);
                 JSONObject properties = (JSONObject) obj.get("properties");
 
-
                 String id = obj.get("id").toString();
-//                String nickname = properties.get("nickname").toString();
-//                String profile_image = properties.get("profile_image").toString();
 
                 result.put("id", id);
-//                result.put("nickname", nickname);
-//                result.put("profile_image", profile_image);
             }
 
         } catch (IOException | ParseException e) {
