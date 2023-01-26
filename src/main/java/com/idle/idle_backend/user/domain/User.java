@@ -1,14 +1,16 @@
 package com.idle.idle_backend.user.domain;
 
 import com.idle.idle_backend.user.enums.Providers;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class User {
 
     @Id

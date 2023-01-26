@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.5'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
 }
 
@@ -35,9 +35,10 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+//	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 	implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 }
 
 tasks.named('test') {
