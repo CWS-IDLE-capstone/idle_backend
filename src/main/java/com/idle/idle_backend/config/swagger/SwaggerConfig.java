@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(
         info = @Info(title = "API 명세서",
-                description = "API 명세서 테스트 입니다.",
+                description = "최원석과 IDLE API 명세서 입니다.",
                 version = "v1"))
 
 @Configuration
