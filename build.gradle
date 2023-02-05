@@ -14,10 +14,6 @@ configurations {
 	}
 }
 
-springBoot {
-	mainClass = 'com.idle.idle_backend.IdleBackendApplication'
-}
-
 repositories {
 	mavenCentral()
 }
@@ -46,10 +42,6 @@ dependencies {
 	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.6.3'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-}
-
-bootJar {
-	enabled = false
 }
 
 jar {
