@@ -20,7 +20,6 @@ public class MailSendService {
     private final SpringTemplateEngine templateEngine;
 
     private String authNum; //랜덤 인증 코드
-    // 난수 발생(여러분들 맘대러)
 
     public void createCode() {
         Random random = new Random();
@@ -39,7 +38,7 @@ public class MailSendService {
     }
 
 
-    //이메일 보낼 양식!
+    //이메일 보낼 양식
     public MimeMessage createEmailForm(String email) throws MessagingException, UnsupportedEncodingException {
 
         createCode(); //인증 코드 생성
