@@ -9,6 +9,8 @@ build/
 src/main/resources/application.properties
 *.yml
 src/main/resources/templates/login.html
+src/main/resources/firebase/firebase_service_key.json
+src/main/resources/templates/mail.html
 
 !**/src/main/**/build/
 !**/src/test/**/build/
@@ -16,6 +18,8 @@ src/main/resources/templates/login.html
 src/main/java/com/example/idle_backend/test
 
 src/main/java/com/example/idle_backend/MainClass.java
+
+
 
 
 ### STS ###

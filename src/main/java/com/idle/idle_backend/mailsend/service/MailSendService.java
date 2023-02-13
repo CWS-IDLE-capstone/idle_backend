@@ -1,4 +1,4 @@
-package com.idle.idle_backend.mailSend.service;
+package com.idle.idle_backend.mailsend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.javamail.JavaMailSender;

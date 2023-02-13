@@ -1,4 +1,4 @@
-package com.idle.idle_backend.mailSend.dto;
+package com.idle.idle_backend.mailsend.dto;
 
 import lombok.*;
 
