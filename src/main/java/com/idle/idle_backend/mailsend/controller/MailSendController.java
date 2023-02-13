@@ -1,10 +1,9 @@
-package com.idle.idle_backend.mailSend.controller;
+package com.idle.idle_backend.mailsend.controller;
 
-import com.idle.idle_backend.mailSend.dto.MailCheckRequest;
-import com.idle.idle_backend.mailSend.service.MailSendService;
+import com.idle.idle_backend.mailsend.dto.MailCheckRequest;
+import com.idle.idle_backend.mailsend.service.MailSendService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
