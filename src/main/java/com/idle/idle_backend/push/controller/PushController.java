@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
-public class MainController {
+public class PushController {
 
     private final FirebaseCloudMessageService firebaseCloudMessageService;
 
