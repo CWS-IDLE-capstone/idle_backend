@@ -15,7 +15,7 @@ public class MailSendController {
 
     private final MailSendService emailService;
     @Operation(description = "메일 확인")
-    @PostMapping("login/mailConfirm")
+    @PostMapping("/api/login/mailConfirm")
     public String mailConfirm(@RequestBody MailCheckRequest emailDto) throws MessagingException, UnsupportedEncodingException {
 
         String authCode = emailService.sendEmail(emailDto.getEmail());
