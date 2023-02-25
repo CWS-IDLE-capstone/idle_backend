@@ -6,6 +6,7 @@ import com.idle.idle_backend.user.dto.AddInfoRequest;
 import com.idle.idle_backend.user.dto.SignUpRequest;
 import com.idle.idle_backend.user.service.UserService;
 import io.jsonwebtoken.Claims;
+import io.swagger.v3.oas.annotations.Operation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ import javax.validation.Valid;
 public class UserController {
     private final UserService userService;
 
+    @Operation(summary = "일반 회원가입" , description = "일반 회원가입")
     @PostMapping("/signup")
     public ResponseEntity<CommonResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequestDto) {
         try {
@@ -34,6 +36,7 @@ public class UserController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    @Operation(summary = "회원 정보 입력" , description = "회원 정보 입력")
     @PatchMapping("/addInfo")
     public ResponseEntity<CommonResponse> addUserInfo(@Valid @RequestBody AddInfoRequest addInfoRequest, @RequestAttribute Claims claims) {
         Integer userId = (int) claims.get("userId");

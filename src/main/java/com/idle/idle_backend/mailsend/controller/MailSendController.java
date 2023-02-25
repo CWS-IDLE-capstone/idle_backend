@@ -14,7 +14,8 @@ import java.io.UnsupportedEncodingException;
 public class MailSendController {
 
     private final MailSendService emailService;
-    @Operation(description = "메일 확인")
+
+    @Operation(summary = "메일 확인" , description = "메일 확인")
     @PostMapping("/api/login/mailConfirm")
     public String mailConfirm(@RequestBody MailCheckRequest emailDto) throws MessagingException, UnsupportedEncodingException {
 

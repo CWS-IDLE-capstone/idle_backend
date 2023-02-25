@@ -20,7 +20,7 @@ public class PushController {
     private final FirebaseCloudMessageService firebaseCloudMessageService;
 
 
-    @Operation(summary = "push_message" , description = "push_message api")
+    @Operation(summary = "푸시 메시지" , description = "푸시 알림 메시지")
     @ApiResponses({
             @ApiResponse(responseCode = "200" , description = "OK!"),
             @ApiResponse(responseCode = "400" , description = "Bad Request"),

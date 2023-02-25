@@ -7,6 +7,7 @@ import com.idle.idle_backend.config.oauth2.social.service.KakaoService;
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
 import io.jsonwebtoken.Claims;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.parser.ParseException;
 import org.springframework.http.HttpStatus;
@@ -33,6 +34,8 @@ public class KakaoController {
      * @throws IOException
      * @throws ParseException
      */
+
+    @Operation(summary = "카카오 로그인" , description = "카카오 로그인")
     @PostMapping("/kakao")
     public ResponseEntity<GetLoginTokenResponse> getKaKaoToken(@Valid @RequestBody GetKakaoTokenRequest getKakaoToken) throws IOException, ParseException {
         String code = getKakaoToken.getCode();
@@ -41,7 +44,7 @@ public class KakaoController {
         return new ResponseEntity(getLoginToken, HttpStatus.OK);
     }
 
-
+    @Operation(summary = "일반 로그인" , description = "일반 로그인")
     @GetMapping("/login")
     public ResponseEntity<GetUserInfoResponse> getUserInfo(@RequestAttribute Claims claims) {
         //엑세스 토큰안의 유저 아이디로 유저를 찾은 다음 유저정보 리턴해줌
