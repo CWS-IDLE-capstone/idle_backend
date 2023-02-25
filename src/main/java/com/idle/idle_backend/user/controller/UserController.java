@@ -1,11 +1,11 @@
 package com.idle.idle_backend.user.controller;
 
 import com.idle.idle_backend.common.CommonResponse;
+
 import com.idle.idle_backend.user.dto.AddInfoRequest;
 import com.idle.idle_backend.user.dto.SignUpRequest;
 import com.idle.idle_backend.user.service.UserService;
 import io.jsonwebtoken.Claims;
-import io.swagger.v3.oas.annotations.Operation;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 @RestController
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping("/signup")
     public ResponseEntity<CommonResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequestDto) {
         try {
             userService.registerUser(signUpRequestDto);
@@ -28,6 +28,7 @@ public class UserController {
             CommonResponse response = new CommonResponse("user id 유저가 이미 존재합니다. 다시한번 확인하세요");
             return new ResponseEntity(response, HttpStatus.CONFLICT);
         }
+
 
         CommonResponse response = new CommonResponse("회원가입에 성공했습니다.");
         return new ResponseEntity(response, HttpStatus.OK);

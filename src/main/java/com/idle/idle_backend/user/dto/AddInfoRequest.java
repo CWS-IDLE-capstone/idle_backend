@@ -10,7 +10,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddInfoRequest {
+
+    private String name;
+
     private String nickname;
+
+    private String imageUrl;
+
+    private String location;
+
 
 }
 
