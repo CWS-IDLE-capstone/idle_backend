@@ -48,7 +48,7 @@ public class UserService {
         user.setNickname(addInfoRequest.getNickname());
         user.setImageUrl(addInfoRequest.getImageUrl());
         user.setLocation(addInfoRequest.getLocation());
-
+        user.setSex(addInfoRequest.getSex());
         user.setNickname(addInfoRequest.getNickname());
 
         userRepository.save(user);

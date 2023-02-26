@@ -1,5 +1,6 @@
 package com.idle.idle_backend.user.dto;
 
+import com.idle.idle_backend.user.enums.Sex;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,8 @@ public class AddInfoRequest {
     private String imageUrl;
 
     private String location;
+
+    private Sex sex;
 
 
 }
