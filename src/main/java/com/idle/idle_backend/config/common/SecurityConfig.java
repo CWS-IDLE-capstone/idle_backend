@@ -57,8 +57,8 @@ public class SecurityConfig{
                 .and()
                 .csrf().disable();
 
-        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .antMatcher("/api/**");
+                http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                        .antMatcher("/api/**");
 //
 //                .authorizeRequests()
 //                .antMatchers("/api/oauth/login","/api/user/addInfo")

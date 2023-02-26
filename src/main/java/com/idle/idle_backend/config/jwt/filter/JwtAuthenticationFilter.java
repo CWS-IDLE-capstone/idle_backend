@@ -31,10 +31,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
         String baseUrl = "http://localhost:8080/api";
-        StringBuffer requestURL = request.getRequestURL();
-        if(requestURL.toString().equals(baseUrl + "/oauth/login") || requestURL.toString().equals(baseUrl + "/user/addInfo")
-                || requestURL.toString().equals(baseUrl + "/vote/createVote") || requestURL.toString().equals(baseUrl + "/vote/updateVote")
-                || requestURL.toString().contains(baseUrl + "/vote/deleteVote/")) {
+        String requestURL = request.getRequestURL().toString();
+        if(requestURL.equals(baseUrl + "/oauth/login")
+                || requestURL.equals(baseUrl + "/user/addInfo")
+                || requestURL.equals(baseUrl + "/vote/createVote")
+                || requestURL.equals(baseUrl + "/vote/updateVote")
+                || requestURL.contains(baseUrl + "/vote/deleteVote/")) {
             String authorizationHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
             try {
                 HashMap<String, Object> parseJwtTokenMap = jwtTokenProvider.parseJwtToken(authorizationHeader);
