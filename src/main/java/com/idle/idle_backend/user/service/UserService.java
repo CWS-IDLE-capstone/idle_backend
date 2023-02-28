@@ -30,6 +30,7 @@ public class UserService {
                 .provider(signUpRequestDto.getProvider())
                 .providerId(signUpRequestDto.getProviderId())
                 .nickname(signUpRequestDto.getNickname())
+                .sex(signUpRequestDto.getSex())
                 .build();
 
         userRepository.save(user);

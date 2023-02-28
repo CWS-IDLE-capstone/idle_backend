@@ -1,6 +1,7 @@
 package com.idle.idle_backend.user.dto;
 
 import com.idle.idle_backend.user.enums.Providers;
+import com.idle.idle_backend.user.enums.Sex;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
@@ -30,5 +31,6 @@ public class SignUpRequest {
 
     private String providerId;
 
+    private Sex sex;
 
 }
