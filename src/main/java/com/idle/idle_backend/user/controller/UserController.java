@@ -23,15 +23,8 @@ public class UserController {
 
     @Operation(summary = "일반 회원가입" , description = "일반 회원가입")
     @PostMapping("/signup")
-    public ResponseEntity<CommonResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequestDto) {
-        try {
-            userService.registerUser(signUpRequestDto);
-        } catch (Exception e) {
-            CommonResponse response = new CommonResponse("user id 유저가 이미 존재합니다. 다시한번 확인하세요");
-            return new ResponseEntity(response, HttpStatus.CONFLICT);
-        }
-
-
+    public ResponseEntity<CommonResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequestDto) throws Exception {
+        userService.registerUser(signUpRequestDto);
         CommonResponse response = new CommonResponse("회원가입에 성공했습니다.");
         return new ResponseEntity(response, HttpStatus.OK);
     }
