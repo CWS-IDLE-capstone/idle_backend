@@ -20,9 +20,6 @@ public class UserService {
     private final UserRepository userRepository;
     public Long registerUser(SignUpRequest signUpRequestDto) throws Exception{
 
-        if (userRepository.existsByProviderId(signUpRequestDto.getProviderId())) {
-            throw new Exception("중복된 유저가 존재합니다.");
-        }
         User user = User.builder()
                 .name(signUpRequestDto.getName())
                 .password(signUpRequestDto.getPassword())
