@@ -1,4 +1,4 @@
-package com.idle.idle_backend.config.common;
+package com.idle.idle_backend.config.jwt.common;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

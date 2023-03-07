@@ -1,4 +1,4 @@
-package com.idle.idle_backend.config.common;
+package com.idle.idle_backend.config.jwt.common;
 
 import com.idle.idle_backend.config.jwt.JwtProperties;
 import com.idle.idle_backend.config.jwt.JwtTokenProvider;

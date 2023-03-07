@@ -69,6 +69,8 @@ public class FirebaseCloudMessageService {
                                 .build()
                         ).build()).validateOnly(false).build();
 
+        System.out.println(fcmMessage);
+
         return objectMapper.writeValueAsString(fcmMessage);
     }
 

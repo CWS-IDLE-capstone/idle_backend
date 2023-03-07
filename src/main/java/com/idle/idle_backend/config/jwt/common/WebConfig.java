@@ -1,4 +1,4 @@
-package com.idle.idle_backend.config.common;
+package com.idle.idle_backend.config.jwt.common;
 
 import com.idle.idle_backend.config.jwt.config.JwtArgumentResolver;
 import org.springframework.context.annotation.Bean;
