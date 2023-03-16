@@ -2,7 +2,11 @@ package com.idle.idle_backend.user.controller;
 
 import com.idle.idle_backend.common.CommonResponse;
 
+import com.idle.idle_backend.config.oauth2.social.dto.GetUserInfoResponse;
+import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.dto.AddInfoRequest;
+import com.idle.idle_backend.user.dto.JwtRequestDto;
+import com.idle.idle_backend.user.dto.NormalLoginResponse;
 import com.idle.idle_backend.user.dto.SignUpRequest;
 import com.idle.idle_backend.user.service.UserService;
 import io.jsonwebtoken.Claims;
@@ -44,4 +48,27 @@ public class UserController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<NormalLoginResponse> signin(@RequestBody JwtRequestDto request) throws Exception {
+        return new ResponseEntity<>(userService.login(request), HttpStatus.OK);
+    }
+
+    @GetMapping("")
+    public ResponseEntity<GetUserInfoResponse> getUser(@RequestAttribute Claims claims){
+        Integer userId = (int) claims.get("userId");
+        Long longId = Long.valueOf(userId);
+        User user = userService.getUser(longId);
+
+
+
+        GetUserInfoResponse getUserInfoResponse = GetUserInfoResponse.builder()
+                .userId(user.getId())
+                .email(user.getEmail())
+                .username(user.getName())
+                .nickname(user.getNickname())
+                .provider(user.getProvider())
+                .build();
+
+        return new ResponseEntity(getUserInfoResponse, HttpStatus.OK);
+    }
 }
