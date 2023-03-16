@@ -40,6 +40,7 @@ public class GetUserInfoResponse implements Serializable {
         this.provider = provider;
         this.providerId = providerId;
         this.username = username;
+        this.nickname = nickname;
         this.email = email;
         this.imageUrl = imageUrl;
         this.message = message;
