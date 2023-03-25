@@ -36,8 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String requestURL = request.getRequestURL().toString();
         if(requestURL.equals(baseUrl + "/oauth/login")
                 || requestURL.equals(baseUrl + "/user/addInfo")
-                || requestURL.equals(baseUrl + "/vote/createVote")
-                || requestURL.equals(baseUrl + "/vote/updateVote")
+                || requestURL.equals(baseUrl + "/dog")
                 || requestURL.equals(baseUrl + "/user") && request.getMethod().equals("GET")
                 || requestURL.contains(baseUrl + "/vote/deleteVote/")) {
             String authorizationHeader = request.getHeader(HttpHeaders.AUTHORIZATION);

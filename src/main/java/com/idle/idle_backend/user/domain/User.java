@@ -1,10 +1,13 @@
 package com.idle.idle_backend.user.domain;
 
+import com.idle.idle_backend.dog.Domain.Dog;
 import com.idle.idle_backend.user.enums.Providers;
 import com.idle.idle_backend.user.enums.Sex;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -39,5 +42,8 @@ public class User {
     private Providers provider;    // oauth2를 이용할 경우 어떤 플랫폼을 이용하는지
 
     private String providerId;  // oauth2를 이용할 경우 아이디값
+
+    @OneToMany(mappedBy = "user")
+    private List<Dog> dogList = new ArrayList<>();
 
 }
