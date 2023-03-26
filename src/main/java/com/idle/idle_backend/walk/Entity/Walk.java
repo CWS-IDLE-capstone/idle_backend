@@ -18,6 +18,8 @@ public class Walk {
     @Column(name = "WALK_ID")
     private Long id;
 
+    private Float distance;
+
     private String routeImage;
 
     private LocalDateTime startTime;
@@ -28,7 +30,6 @@ public class Walk {
 
     private Long energyFinishDistance;
 
-    private Long distance;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")

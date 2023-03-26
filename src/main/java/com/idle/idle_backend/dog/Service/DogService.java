@@ -6,11 +6,11 @@ import com.idle.idle_backend.dog.Enum.Breed;
 import com.idle.idle_backend.dog.Repository.DogRepository;
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -42,4 +42,23 @@ public class DogService {
         
         return dog.getId();
     }
+
+    public List<Dog> getDogs(Long longId) {
+        Optional<User> byId = userRepository.findById(longId);
+        User user = byId.get();
+
+        return dogRepository.findDogByUser(user.getId());
+    }
+
+    public Dog getDog(Long longId, Long dogId) {
+        //유저 예외 처리
+
+        return dogRepository.findDogById(dogId);
+    }
+
+    public void deleteDog(Integer userId, Long dogId) {
+
+        dogRepository.deleteById(dogId);
+    }
+
 }
