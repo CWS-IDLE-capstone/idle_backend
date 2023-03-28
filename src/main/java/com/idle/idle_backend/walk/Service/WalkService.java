@@ -1,5 +1,7 @@
 package com.idle.idle_backend.walk.Service;
 
+import com.idle.idle_backend.user.domain.User;
+import com.idle.idle_backend.user.domain.UserRepository;
 import com.idle.idle_backend.walk.Entity.Walk;
 import com.idle.idle_backend.walk.Repository.WalkRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +15,18 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional
 public class WalkService {
+
     private final WalkRepository walkRepository;
+    private final UserRepository userRepository;
+
     public Long createWalk(Long longId, String routeImage, LocalDateTime startTime, LocalDateTime finishTime, LocalDateTime energyFinishTime, Long energyFinishDistance, Float distance) {
         //user 예외처리
 
+        Optional<User> findUser = userRepository.findById(longId);
+        User user = findUser.get();
 
         Walk walk = Walk.builder()
+                .user(user)
                 .routeImage(routeImage)
                 .startTime(startTime)
                 .finishTime(finishTime)

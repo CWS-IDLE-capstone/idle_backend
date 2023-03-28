@@ -2,7 +2,6 @@ package com.idle.idle_backend.walk.Controller;
 
 
 import com.idle.idle_backend.walk.Dto.CreateWalkRequest;
-import com.idle.idle_backend.walk.Dto.CreateWalkReponse;
 import com.idle.idle_backend.walk.Dto.GetWalkResponse;
 import com.idle.idle_backend.walk.Entity.Walk;
 import com.idle.idle_backend.walk.Service.WalkService;
