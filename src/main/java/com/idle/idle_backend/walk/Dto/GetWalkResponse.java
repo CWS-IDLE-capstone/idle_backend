@@ -14,17 +14,17 @@ public class GetWalkResponse {
 
     private Float distance;
 
-    private LocalDateTime startTime;
+    private String startTime;
 
-    private LocalDateTime finishTime;
+    private String finishTime;
 
-    private LocalDateTime energyFinishTime;
+    private String energyFinishTime;
 
     private Long energyFinishDistance;
 
 
     @Builder
-    public GetWalkResponse(String routeImage, LocalDateTime startTime, LocalDateTime finishTime, LocalDateTime energyFinishTime, Long energyFinishDistance, Float distance) {
+    public GetWalkResponse(String routeImage, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance, Float distance) {
         this.routeImage = routeImage;
         this.startTime = startTime;
         this.finishTime = finishTime;

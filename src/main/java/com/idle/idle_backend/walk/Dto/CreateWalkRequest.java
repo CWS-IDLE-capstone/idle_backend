@@ -13,15 +13,15 @@ public class CreateWalkRequest {
 
     private Float distance;
 
-    private LocalDateTime startTime;
+    private String startTime;
 
-    private LocalDateTime finishTime;
+    private String finishTime;
 
-    private LocalDateTime energyFinishTime;
+    private String energyFinishTime;
 
     private Long energyFinishDistance;
 
-    public CreateWalkRequest(String routeImage, Float distance, LocalDateTime startTime, LocalDateTime finishTime, LocalDateTime energyFinishTime, Long energyFinishDistance) {
+    public CreateWalkRequest(String routeImage, Float distance, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance) {
         this.routeImage = routeImage;
         this.distance = distance;
         this.startTime = startTime;

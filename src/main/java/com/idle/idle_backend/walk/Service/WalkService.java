@@ -2,6 +2,7 @@ package com.idle.idle_backend.walk.Service;
 
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
+import com.idle.idle_backend.walk.Dto.WalkListData;
 import com.idle.idle_backend.walk.Entity.Walk;
 import com.idle.idle_backend.walk.Repository.WalkRepository;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,10 +21,10 @@ public class WalkService {
     private final WalkRepository walkRepository;
     private final UserRepository userRepository;
 
-    public Long createWalk(Long longId, String routeImage, LocalDateTime startTime, LocalDateTime finishTime, LocalDateTime energyFinishTime, Long energyFinishDistance, Float distance) {
+    public Long createWalk(Long userId, String routeImage, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance, Float distance) {
         //user 예외처리
 
-        Optional<User> findUser = userRepository.findById(longId);
+        Optional<User> findUser = userRepository.findById(userId);
         User user = findUser.get();
 
         Walk walk = Walk.builder()
@@ -40,12 +42,24 @@ public class WalkService {
         return walk.getId();
     }
 
-    public Walk getWalk(Long longId, Long walkId) {
+    public Walk getWalk(Long userId, String date) {
 
-        Optional<Walk> byId = walkRepository.findById(walkId);
-        Walk walk = byId.get();
+        Optional<User> findUser = userRepository.findById(userId);
+        User user = findUser.get();
 
-
-        return walk;
+        return walkRepository.findByUserAndStartTimeContains(user, date);
     }
+
+    public List<Walk> getWalkList(Long userId, String walkMonth) {
+
+        Optional<User> findUser = userRepository.findById(userId);
+        User user = findUser.get();
+
+        List<Walk> listWalk = walkRepository.findListByUserAndStartTimeContains(user, walkMonth);
+
+
+        return listWalk;
+
+    }
+
 }

@@ -2,6 +2,7 @@ package com.idle.idle_backend.walk.Entity;
 
 import com.idle.idle_backend.user.domain.User;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -22,14 +23,16 @@ public class Walk {
 
     private String routeImage;
 
-    private LocalDateTime startTime;
+    private String startTime;
 
-    private LocalDateTime finishTime;
+    private String finishTime;
 
-    private LocalDateTime energyFinishTime;
+    private String energyFinishTime;
 
     private Long energyFinishDistance;
 
+    @CreatedDate
+    private LocalDateTime createdDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
