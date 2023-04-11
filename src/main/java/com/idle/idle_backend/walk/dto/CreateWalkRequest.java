@@ -17,9 +17,9 @@ public class CreateWalkRequest {
 
     private String energyFinishTime;
 
-    private Long energyFinishDistance;
+    private Float energyFinishDistance;
 
-    public CreateWalkRequest(String routeImage, Float distance, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance) {
+    public CreateWalkRequest(String routeImage, Float distance, String startTime, String finishTime, String energyFinishTime, Float energyFinishDistance) {
         this.routeImage = routeImage;
         this.distance = distance;
         this.startTime = startTime;

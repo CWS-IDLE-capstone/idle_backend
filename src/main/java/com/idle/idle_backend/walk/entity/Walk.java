@@ -29,7 +29,7 @@ public class Walk {
 
     private String energyFinishTime;
 
-    private Long energyFinishDistance;
+    private Float energyFinishDistance;
 
     @CreatedDate
     private LocalDateTime createdDate;

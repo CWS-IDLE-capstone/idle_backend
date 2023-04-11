@@ -18,11 +18,11 @@ public class GetWalkResponse {
 
     private String energyFinishTime;
 
-    private Long energyFinishDistance;
+    private Float energyFinishDistance;
 
 
     @Builder
-    public GetWalkResponse(String routeImage, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance, Float distance) {
+    public GetWalkResponse(String routeImage, String startTime, String finishTime, String energyFinishTime, Float energyFinishDistance, Float distance) {
         this.routeImage = routeImage;
         this.startTime = startTime;
         this.finishTime = finishTime;
