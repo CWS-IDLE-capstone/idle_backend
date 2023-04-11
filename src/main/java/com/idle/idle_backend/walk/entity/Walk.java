@@ -1,4 +1,4 @@
-package com.idle.idle_backend.walk.Entity;
+package com.idle.idle_backend.walk.entity;
 
 import com.idle.idle_backend.user.domain.User;
 import lombok.*;

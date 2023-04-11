@@ -1,13 +1,12 @@
-package com.idle.idle_backend.walk.Dto;
+package com.idle.idle_backend.walk.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Getter
 @NoArgsConstructor
-public class CreateWalkRequest {
+public class GetWalkResponse {
 
     private String routeImage;
 
@@ -21,12 +20,14 @@ public class CreateWalkRequest {
 
     private Long energyFinishDistance;
 
-    public CreateWalkRequest(String routeImage, Float distance, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance) {
+
+    @Builder
+    public GetWalkResponse(String routeImage, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance, Float distance) {
         this.routeImage = routeImage;
-        this.distance = distance;
         this.startTime = startTime;
         this.finishTime = finishTime;
         this.energyFinishTime = energyFinishTime;
         this.energyFinishDistance = energyFinishDistance;
+        this.distance = distance;
     }
 }

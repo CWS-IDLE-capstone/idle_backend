@@ -1,7 +1,7 @@
-package com.idle.idle_backend.walk.Repository;
+package com.idle.idle_backend.walk.repository;
 
 import com.idle.idle_backend.user.domain.User;
-import com.idle.idle_backend.walk.Entity.Walk;
+import com.idle.idle_backend.walk.entity.Walk;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

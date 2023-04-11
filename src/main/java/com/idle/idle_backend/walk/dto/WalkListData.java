@@ -1,9 +1,7 @@
-package com.idle.idle_backend.walk.Dto;
+package com.idle.idle_backend.walk.dto;
 
 import lombok.Builder;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
 
 @Getter
 public class WalkListData {

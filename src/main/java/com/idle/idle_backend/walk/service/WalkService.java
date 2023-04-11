@@ -1,15 +1,13 @@
-package com.idle.idle_backend.walk.Service;
+package com.idle.idle_backend.walk.service;
 
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
-import com.idle.idle_backend.walk.Dto.WalkListData;
-import com.idle.idle_backend.walk.Entity.Walk;
-import com.idle.idle_backend.walk.Repository.WalkRepository;
+import com.idle.idle_backend.walk.entity.Walk;
+import com.idle.idle_backend.walk.repository.WalkRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

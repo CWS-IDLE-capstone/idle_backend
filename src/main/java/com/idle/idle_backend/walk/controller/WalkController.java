@@ -1,10 +1,10 @@
-package com.idle.idle_backend.walk.Controller;
+package com.idle.idle_backend.walk.controller;
 
-import com.idle.idle_backend.walk.Dto.CreateWalkRequest;
-import com.idle.idle_backend.walk.Dto.GetWalkListResponse;
-import com.idle.idle_backend.walk.Dto.GetWalkResponse;
-import com.idle.idle_backend.walk.Entity.Walk;
-import com.idle.idle_backend.walk.Service.WalkService;
+import com.idle.idle_backend.walk.dto.CreateWalkRequest;
+import com.idle.idle_backend.walk.dto.GetWalkListResponse;
+import com.idle.idle_backend.walk.dto.GetWalkResponse;
+import com.idle.idle_backend.walk.entity.Walk;
+import com.idle.idle_backend.walk.service.WalkService;
 import io.jsonwebtoken.Claims;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
