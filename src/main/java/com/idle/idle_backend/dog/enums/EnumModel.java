@@ -1,4 +1,4 @@
-package com.idle.idle_backend.dog.Enum;
+package com.idle.idle_backend.dog.enums;
 
 public interface EnumModel {
 

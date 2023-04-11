@@ -1,6 +1,6 @@
-package com.idle.idle_backend.dog.Domain;
+package com.idle.idle_backend.dog.domain;
 
-import com.idle.idle_backend.dog.Enum.Breed;
+import com.idle.idle_backend.dog.enums.Breed;
 import com.idle.idle_backend.user.domain.User;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,9 +1,9 @@
-package com.idle.idle_backend.dog.Service;
+package com.idle.idle_backend.dog.service;
 
 
-import com.idle.idle_backend.dog.Domain.Dog;
-import com.idle.idle_backend.dog.Enum.Breed;
-import com.idle.idle_backend.dog.Repository.DogRepository;
+import com.idle.idle_backend.dog.domain.Dog;
+import com.idle.idle_backend.dog.enums.Breed;
+import com.idle.idle_backend.dog.repository.DogRepository;
 import com.idle.idle_backend.user.domain.User;
 import com.idle.idle_backend.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;

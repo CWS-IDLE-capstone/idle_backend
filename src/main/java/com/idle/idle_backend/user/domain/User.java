@@ -1,6 +1,6 @@
 package com.idle.idle_backend.user.domain;
 
-import com.idle.idle_backend.dog.Domain.Dog;
+import com.idle.idle_backend.dog.domain.Dog;
 import com.idle.idle_backend.user.enums.Providers;
 import com.idle.idle_backend.user.enums.Sex;
 import lombok.*;

@@ -1,6 +1,6 @@
-package com.idle.idle_backend.dog.Dto;
+package com.idle.idle_backend.dog.dto;
 
-import com.idle.idle_backend.dog.Enum.Breed;
+import com.idle.idle_backend.dog.enums.Breed;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

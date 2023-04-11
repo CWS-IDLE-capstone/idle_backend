@@ -1,11 +1,11 @@
-package com.idle.idle_backend.dog.Controller;
+package com.idle.idle_backend.dog.controller;
 
 
-import com.idle.idle_backend.dog.Domain.Dog;
-import com.idle.idle_backend.dog.Dto.CreateDogRequest;
-import com.idle.idle_backend.dog.Dto.CreateDogResponse;
-import com.idle.idle_backend.dog.Dto.GetDogResponse;
-import com.idle.idle_backend.dog.Service.DogService;
+import com.idle.idle_backend.dog.domain.Dog;
+import com.idle.idle_backend.dog.dto.CreateDogRequest;
+import com.idle.idle_backend.dog.dto.CreateDogResponse;
+import com.idle.idle_backend.dog.dto.GetDogResponse;
+import com.idle.idle_backend.dog.service.DogService;
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
