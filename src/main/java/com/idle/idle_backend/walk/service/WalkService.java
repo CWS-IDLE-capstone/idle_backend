@@ -19,7 +19,7 @@ public class WalkService {
     private final WalkRepository walkRepository;
     private final UserRepository userRepository;
 
-    public Long createWalk(Long userId, String routeImage, String startTime, String finishTime, String energyFinishTime, Long energyFinishDistance, Float distance) {
+    public Long createWalk(Long userId, String routeImage, String startTime, String finishTime, String energyFinishTime, Float energyFinishDistance, Float distance) {
         //user 예외처리
 
         Optional<User> findUser = userRepository.findById(userId);
@@ -60,4 +60,11 @@ public class WalkService {
 
     }
 
+    public void deleteWalk(Long walkId, Long longId) {
+        //user 예외처리
+        //walkId 예외처리
+
+        walkRepository.deleteById(walkId);
+
+    }
 }

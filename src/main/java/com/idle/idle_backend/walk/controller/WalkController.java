@@ -74,4 +74,18 @@ public class WalkController {
 
     }
 
+    @Operation(summary = "산책 삭제", description = "파라미터에 삭제할 walkId 넣어주시면 됩니다")
+    @DeleteMapping("/{walkId}")
+    public ResponseEntity<Long> deleteWalk(@PathVariable Long walkId, @RequestAttribute Claims claims){
+
+        Integer userId = (int) claims.get("userId");
+        Long longId = Long.valueOf(userId);
+
+        walkService.deleteWalk(walkId, longId);
+
+        return new ResponseEntity<>(walkId, HttpStatus.OK);
+    }
+
+
+
 }
