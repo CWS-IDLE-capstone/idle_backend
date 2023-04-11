@@ -12,4 +12,6 @@ public interface WalkRepository extends JpaRepository<Walk, Long> {
 
     List<Walk> findListByUserAndStartTimeContains(User user, String startTime);
 
+    List<Walk> findListByUser(User user);
+
 }

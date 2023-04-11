@@ -74,7 +74,7 @@ public class WalkController {
 
     }
 
-    @Operation(summary = "산책 삭제", description = "파라미터에 삭제할 walkId 넣어주시면 됩니다")
+    @Operation(summary = "산책 삭제", description = "헤더에 토큰 넣고 파라미터에 삭제할 walkId 넣어주시면 됩니다")
     @DeleteMapping("/{walkId}")
     public ResponseEntity<Long> deleteWalk(@PathVariable Long walkId, @RequestAttribute Claims claims){
 
@@ -86,6 +86,19 @@ public class WalkController {
         return new ResponseEntity<>(walkId, HttpStatus.OK);
     }
 
+    @Operation(summary = "유저의 전체 데이터 조회", description = "헤더에 토큰 넣어주시면 됩니")
+    @GetMapping("/list")
+    public ResponseEntity<GetWalkListResponse> getWalkTotalList(@RequestAttribute Claims claims) {
+        Integer userId = (int) claims.get("userId");
+        Long longId = Long.valueOf(userId);
 
+        List<Walk> listWalk = walkService.getWalkTotalList(longId);
+
+        GetWalkListResponse getWalkListResponse = GetWalkListResponse.builder()
+                .walkList(listWalk)
+                .build();
+
+        return new ResponseEntity(getWalkListResponse, HttpStatus.OK);
+    }
 
 }

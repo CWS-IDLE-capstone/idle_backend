@@ -49,6 +49,7 @@ public class WalkService {
     }
 
     public List<Walk> getWalkList(Long userId, String walkMonth) {
+        //user 예외처리
 
         Optional<User> findUser = userRepository.findById(userId);
         User user = findUser.get();
@@ -66,5 +67,17 @@ public class WalkService {
 
         walkRepository.deleteById(walkId);
 
+    }
+
+    public List<Walk> getWalkTotalList(Long userId) {
+
+        //user 예외처리
+
+        Optional<User> findUser = userRepository.findById(userId);
+        User user = findUser.get();
+
+        List<Walk> listWalk = walkRepository.findListByUser(user);
+
+        return listWalk;
     }
 }
