@@ -27,7 +27,11 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtProvider;
 
-    public Long registerUser(SignUpRequest signUpRequestDto) throws Exception{
+    public Long registerUser(SignUpRequest signUpRequestDto) {
+
+        if (userRepository.existsByEmail(signUpRequestDto.getEmail())) {
+            throw new RuntimeException("이미 회원 가입 한 회원 입니다");
+        }
 
         User user = User.builder()
                 .name(signUpRequestDto.getName())
